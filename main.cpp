@@ -2,7 +2,50 @@
 #include <fstream>
 
 using namespace std;
+char* encrpt(char* key, char* text, int textSize)
+{
+    char* out = new char[textSize];
+    for(int i = 0; i < textSize; i++)
+    {
+        out[i] = key[text[i] - 'A'];
+    }
+    return out;
+}
 
+
+//decrypt by encrypt with inverse key
+char* decrpt(char* key, char* text, int textSize)
+{
+    char* keyinv = new char[26];
+    for(int i = 0; i < 26; i++)
+    {
+        keyinv[key[i] - 'A'] = i + 'A';
+    }
+    return encrpt(keyinv, text, textSize);
+}
+
+
+//key generation note include stdlib.h, time.h
+char* keygen(unsigned int keyG = 0)
+{
+    char* key = new char[26];
+    for(int i = 0; i < 26; i ++)
+        key[i] = i + 'A';
+
+    srand(keyG);
+
+    for(int j = 0; j < 5; j++)
+    {
+        for(int i = 0; i < 26; i ++)
+        {
+            int r = rand()%26;
+            char temp = key[i];
+            key[i]= key[r];
+            key[r] = temp;
+        }
+    }
+    return key;
+}
 string get_text(string file_name) {
     ifstream my_file(file_name);    //open file "file_name"
     string text;
