@@ -1,12 +1,12 @@
 #include <iostream>
 #include <fstream>
+#include "KEYS.h"
 
 using namespace std;
-char* encrpt(char* key, char* text, int textSize)
-{
-    char* out = new char[textSize];
-    for(int i = 0; i < textSize; i++)
-    {
+
+char *encrpt(char *key, char *text, int textSize) {
+    char *out = new char[textSize];
+    for (int i = 0; i < textSize; i++) {
         out[i] = key[text[i] - 'A'];
     }
     return out;
@@ -14,11 +14,9 @@ char* encrpt(char* key, char* text, int textSize)
 
 
 //decrypt by encrypt with inverse key
-char* decrpt(char* key, char* text, int textSize)
-{
-    char* keyinv = new char[26];
-    for(int i = 0; i < 26; i++)
-    {
+char *decrpt(char *key, char *text, int textSize) {
+    char *keyinv = new char[26];
+    for (int i = 0; i < 26; i++) {
         keyinv[key[i] - 'A'] = i + 'A';
     }
     return encrpt(keyinv, text, textSize);
@@ -26,27 +24,25 @@ char* decrpt(char* key, char* text, int textSize)
 
 
 //key generation note include stdlib.h, time.h
-char* keygen(unsigned int keyG = 0)
-{
-    char* key = new char[26];
-    for(int i = 0; i < 26; i ++)
+char *keygen(unsigned int keyG = 0) {
+    char *key = new char[26];
+    for (int i = 0; i < 26; i++)
         key[i] = i + 'A';
 
     srand(keyG);
 
-    for(int j = 0; j < 5; j++)
-    {
-        for(int i = 0; i < 26; i ++)
-        {
-            int r = rand()%26;
+    for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < 26; i++) {
+            int r = rand() % 26;
             char temp = key[i];
-            key[i]= key[r];
+            key[i] = key[r];
             key[r] = temp;
         }
     }
     return key;
 }
-string get_text(string file_name) {
+
+string get_text(const string &file_name) {
     ifstream my_file(file_name);    //open file "file_name"
     string text;
     if (my_file.is_open()) {
@@ -63,17 +59,10 @@ string get_text(string file_name) {
     return text;
 }
 
-void encrypt() {
-}
-
-void decrypt() {
-
-}
-
 int main() {
     //make the cout<< write in the file "output.txt"
     freopen("output.txt", "w", stdout);
-
+KEYS keys;
     cout << get_text("encryption.txt");
     return 0;
 }
