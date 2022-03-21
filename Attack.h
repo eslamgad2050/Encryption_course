@@ -7,6 +7,7 @@ using namespace std;
 
 class Attack {
 private:
+    bool unciphered[26];
     pair<int, char> *one_chars;
     pair<int, char *> *tow_chars;
     string cipher;

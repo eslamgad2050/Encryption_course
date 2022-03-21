@@ -10,6 +10,9 @@ Attack::Attack(string ciphe) {
     cipher = ciphe;
     one_chars = count_1_char();
     tow_chars = count_2_chars();
+    for (int i = 0; i < 26; i++) {
+        unciphered[i] = false;
+    }
 }
 
 pair<int, char> *Attack::count_1_char() {
@@ -44,23 +47,34 @@ pair<int, char *> *Attack::count_2_chars() {
 
 string Attack::get_key() {
     key['E' - 'A'] = one_chars[0].second;
-    choosed['E' - 'A'] = 1;
+    choosed[one_chars[0].second - 'A'] = 1;
     key[0] = one_chars[1].second;
-    choosed[0] = 1;
+    choosed[one_chars[1].second - 'A'] = 1;
     get_char_from_conflicts('H', vector<pair_char_bool >{
             pair_char_bool('E', true)});
 
     get_char_from_conflicts('T', vector<pair_char_bool >{
             pair_char_bool('H', true),
             pair_char_bool('A', false)});
+
     get_char_from_conflicts('R', vector<pair_char_bool >{
             pair_char_bool('E', false),
             pair_char_bool('E', true),
             pair_char_bool('A', false)});
+
+
+    get_char_from_conflicts('S', vector<pair_char_bool >{
+            pair_char_bool('E', false),
+            pair_char_bool('E', true),
+            pair_char_bool('T', true),
+            pair_char_bool('I', false),
+            pair_char_bool('A', false)});
+
     get_char_from_conflicts('N', vector<pair_char_bool >{
             pair_char_bool('A', false),
             pair_char_bool('T', true),
             pair_char_bool('E', true)});
+
     get_char_from_conflicts('O', vector<pair_char_bool >{
             pair_char_bool('N', true),
             pair_char_bool('T', false),
@@ -73,12 +87,6 @@ string Attack::get_key() {
             pair_char_bool('H', false),
             pair_char_bool('A', false)});
 
-    get_char_from_conflicts('S', vector<pair_char_bool >{
-            pair_char_bool('E', false),
-            pair_char_bool('E', true),
-            pair_char_bool('T', true),
-            pair_char_bool('I', false),
-            pair_char_bool('A', false)});
     get_char_from_conflicts('L', vector<pair_char_bool >{
             pair_char_bool('E', true),
             pair_char_bool('E', false),
@@ -94,11 +102,6 @@ string Attack::get_key() {
             pair_char_bool('I', false),
             pair_char_bool('H', true)});
 
-    get_char_from_conflicts('U', vector<pair_char_bool >{
-            pair_char_bool('O', false),
-            pair_char_bool('R', true),
-            pair_char_bool('S', true),
-            pair_char_bool('T', true),});
 
     get_char_from_conflicts('D', vector<pair_char_bool >{
             pair_char_bool('N', false),
@@ -106,14 +109,34 @@ string Attack::get_key() {
             pair_char_bool('E', true),
             pair_char_bool('I', true)});
 
+    get_char_from_conflicts('F', vector<pair_char_bool >{
+            pair_char_bool('O', true),
+            pair_char_bool('T', true),
+            pair_char_bool('O', false)});
+
     get_char_from_conflicts('W', vector<pair_char_bool >{
-            pair_char_bool('N', false),
-            pair_char_bool('E', false)});
+            pair_char_bool('A', true),
+            pair_char_bool('E', false),
+            pair_char_bool('E', true),
+            pair_char_bool('H', true),
+            pair_char_bool('O', false),
+            pair_char_bool('I', true)});
+
 
     get_char_from_conflicts('P', vector<pair_char_bool >{
             pair_char_bool('E', true),
             pair_char_bool('E', false)});
 
+
+    get_char_from_conflicts('U', vector<pair_char_bool >{
+            pair_char_bool('O', false),
+            pair_char_bool('R', true),
+            pair_char_bool('S', true),
+            pair_char_bool('T', true),});
+
+    for (int i = 0; i < 26; ++i) {
+
+    }
     return key;
 }
 
