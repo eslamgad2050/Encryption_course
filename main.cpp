@@ -83,7 +83,9 @@ void perform_attack(Attack attack) {
         cout << "enter the first char" << "\n";
         cin >> first;
         cout << "enter the second char" << "\n";
-
+        cin >> second;
+        attack.swap_2_chars_in_key(first, second);
+        perform_attack(attack);
     } else if (in == 'd') {}
 };
 
