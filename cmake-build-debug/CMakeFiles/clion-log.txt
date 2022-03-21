@@ -1,4 +1,4 @@
-/snap/clion/184/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/184/bin/ninja/linux/ninja -G Ninja /home/eslam/Downloads/Faculty/crypto/first_alogrithm
+/snap/clion/184/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/184/bin/ninja/linux/ninja -G Ninja "/home/eslam/Downloads/Faculty/crypto/first_alogrithm 2.0"
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/eslam/Downloads/Faculty/crypto/first_alogrithm/cmake-build-debug
+-- Build files have been written to: /home/eslam/Downloads/Faculty/crypto/first_alogrithm 2.0/cmake-build-debug

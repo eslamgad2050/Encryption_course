@@ -3,4 +3,4 @@ project(first_alogrithm)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(first_alogrithm main.cpp KEYS.cpp Node.cpp Node.h)
+add_executable(first_alogrithm main.cpp KEYS.cpp Node.cpp Node.h Attack.cpp Attack.h)

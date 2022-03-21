@@ -1,6 +1,7 @@
-#include <iostream>
-#include <fstream>
+
+#include "bits/stdc++.h"
 #include "KEYS.h"
+#include "Attack.h"
 
 using namespace std;
 
@@ -61,8 +62,12 @@ string get_text(const string &file_name) {
 
 int main() {
     //make the cout<< write in the file "output.txt"
-    freopen("output.txt", "w", stdout);
-KEYS keys;
-    cout << get_text("encryption.txt");
+    // freopen("output.txt", "w", stdout);
+    Attack attack(get_text("cipher.txt"));
+    pair<int, char *> *x = attack.count_2_chars();
+    for (int i = 0; i < 26 * 26; ++i) {
+        cout << x[i].first << "  " << x[i].second << "\n";
+    }
+    cout << attack.decrypt();
     return 0;
 }
