@@ -109,6 +109,10 @@ string Attack::get_key() {
             pair_char_bool('E', true),
             pair_char_bool('I', true)});
 
+    get_char_from_conflicts('G', vector<pair_char_bool >{
+            pair_char_bool('N', false),
+            pair_char_bool('E', true)});
+
     get_char_from_conflicts('F', vector<pair_char_bool >{
             pair_char_bool('O', true),
             pair_char_bool('T', true),
@@ -123,16 +127,25 @@ string Attack::get_key() {
             pair_char_bool('I', true)});
 
 
-    get_char_from_conflicts('P', vector<pair_char_bool >{
-            pair_char_bool('E', true),
-            pair_char_bool('E', false)});
-
-
     get_char_from_conflicts('U', vector<pair_char_bool >{
             pair_char_bool('O', false),
             pair_char_bool('R', true),
             pair_char_bool('S', true),
             pair_char_bool('T', true),});
+
+    get_char_from_conflicts('M', vector<pair_char_bool >{
+            pair_char_bool('E', true),
+            pair_char_bool('E', false),
+            pair_char_bool('A', true),
+            pair_char_bool('O', false),
+            pair_char_bool('O', true),});
+
+    get_char_from_conflicts('B', vector<pair_char_bool >{
+            pair_char_bool('E', true)});
+
+    get_char_from_conflicts('P', vector<pair_char_bool >{
+            pair_char_bool('E', true),
+            pair_char_bool('E', false)});
 
     for (int i = 0; i < 26; ++i) {
 
