@@ -5,22 +5,22 @@
 
 using namespace std;
 
-char *encrpt(char *key, char *text, int textSize) {
-    char *out = new char[textSize];
-    for (int i = 0; i < textSize; i++) {
-        out[i] = key[text[i] - 'A'];
+string encrpt(char *key, string text) {
+    string result;
+    for (char i: text) {
+        result += key[i - 'A'];
     }
-    return out;
+    return result;
 }
 
 
 //decrypt by encrypt with inverse key
-char *decrpt(char *key, char *text, int textSize) {
+string decrpt(char *key, string text) {
     char *keyinv = new char[26];
     for (int i = 0; i < 26; i++) {
         keyinv[key[i] - 'A'] = i + 'A';
     }
-    return encrpt(keyinv, text, textSize);
+    return encrpt(keyinv, text);
 }
 
 
@@ -60,14 +60,36 @@ string get_text(const string &file_name) {
     return text;
 }
 
+bool write_text(const string &file_name, string text) {
+    ofstream my_file(file_name);    //open file "file_name"
+    if (my_file.is_open()) {
+        my_file << text;
+        return true;
+    } else {
+        return false;
+    }
+}
+
+void interact() {
+    char input;
+    cout << "enter \"e\" for encrypt\n \"d\" for decrypt\n\"a\" for attack";
+    cin >> input;
+    if (input == 'e') {
+        char *key = keygen();
+        cout << "key=   " << key << "\n";
+        string x = encrpt(key, get_text("encryption.txt"));
+        cout << x;
+        write_text("decryption.txt", x);
+    } else if (input == 'd') {
+        cout << decrpt("OXSWACVZJTELGRMUFPHNKQDIBY", get_text("decryption.txt"));
+    } else if (input == 'a') {}
+}
+
 int main() {
     //make the cout<< write in the file "output.txt"
     // freopen("output.txt", "w", stdout);
-    Attack attack(get_text("cipher.txt"));
-    pair<int, char *> *x = attack.count_2_chars();
-    for (int i = 0; i < 26 * 26; ++i) {
-        cout << x[i].first << "  " << x[i].second << "\n";
-    }
-    cout << attack.decrypt();
+    interact();
+    // Attack attack(get_text("cipher.txt"));
+    // cout << attack.decrypt();
     return 0;
 }

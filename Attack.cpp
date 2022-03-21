@@ -10,6 +10,9 @@ Attack::Attack(string ciphe) {
     cipher = ciphe;
     one_chars = count_1_char();
     tow_chars = count_2_chars();
+    for (int i = 0; i < 26; ++i) {
+        choosed[i] = 0;
+    }
 }
 
 pair<int, char> *Attack::count_1_char() {
