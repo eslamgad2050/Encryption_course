@@ -24,7 +24,9 @@ public:
 
     string decrypt();
 
-    void get_char_from_tows(char target, char twin, bool first);
+    char get_char_from_tows(char target, char twin, bool first);
+
+    char get_char_from_conflicts(char ch, vector<pair<char, bool> > twins);
 };
 
 
