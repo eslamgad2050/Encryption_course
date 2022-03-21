@@ -70,9 +70,26 @@ bool write_text(const string &file_name, string text) {
     }
 }
 
+void perform_attack(Attack attack) {
+    cout << attack.decrypt();
+    cout << "enter\n s: to show the key\n r: to replace tow chars\n d: to done";
+    char in;
+    cin >> in;
+    if (in == 's') {
+        cout << attack.get_key() << "\n";
+        perform_attack(attack);
+    } else if (in == 'r') {
+        char first, second;
+        cout << "enter the first char" << "\n";
+        cin >> first;
+        cout << "enter the second char" << "\n";
+
+    } else if (in == 'd') {}
+};
+
 void interact() {
     char input;
-    cout << "enter \"e\" for encrypt\n \"d\" for decrypt\n\"a\" for attack";
+    cout << "enter\n e: to encrypt\n d: to decrypt\n a: to attack";
     cin >> input;
     if (input == 'e') {
         char *key = keygen();
@@ -82,12 +99,13 @@ void interact() {
         write_text("decryption.txt", x);
     } else if (input == 'd') {
         cout << decrpt("OXSWACVZJTELGRMUFPHNKQDIBY", get_text("decryption.txt"));
-    } else if (input == 'a') {}
+    } else if (input == 'a') {
+        Attack attack(get_text("cipher.txt"));
+        perform_attack(attack);
+    }
 }
 
 int main() {
-    //make the cout<< write in the file "output.txt"
-    // freopen("output.txt", "w", stdout);
     interact();
     // Attack attack(get_text("cipher.txt"));
     // cout << attack.decrypt();

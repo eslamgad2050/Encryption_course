@@ -45,117 +45,120 @@ pair<int, char *> *Attack::count_2_chars() {
     return result;
 }
 
-string Attack::get_key() {
-    key['E' - 'A'] = one_chars[0].second;
-    choosed[one_chars[0].second - 'A'] = 1;
-    key[0] = one_chars[1].second;
-    choosed[one_chars[1].second - 'A'] = 1;
-    get_char_from_conflicts('H', vector<pair_char_bool >{
-            pair_char_bool('E', true)});
+string Attack::generate_key() {
+    if (start) {
+        key['E' - 'A'] = one_chars[0].second;
+        choosed[one_chars[0].second - 'A'] = 1;
+        key[0] = one_chars[1].second;
+        choosed[one_chars[1].second - 'A'] = 1;
+        get_char_from_conflicts('H', vector<pair_char_bool >{
+                pair_char_bool('E', true)});
 
-    get_char_from_conflicts('T', vector<pair_char_bool >{
-            pair_char_bool('H', true),
-            pair_char_bool('A', false)});
+        get_char_from_conflicts('T', vector<pair_char_bool >{
+                pair_char_bool('H', true),
+                pair_char_bool('A', false)});
 
-    get_char_from_conflicts('R', vector<pair_char_bool >{
-            pair_char_bool('E', false),
-            pair_char_bool('E', true),
-            pair_char_bool('A', false)});
-
-
-    get_char_from_conflicts('S', vector<pair_char_bool >{
-            pair_char_bool('E', false),
-            pair_char_bool('E', true),
-            pair_char_bool('T', true),
-            pair_char_bool('I', false),
-            pair_char_bool('A', false)});
-
-    get_char_from_conflicts('N', vector<pair_char_bool >{
-            pair_char_bool('A', false),
-            pair_char_bool('T', true),
-            pair_char_bool('E', true)});
-
-    get_char_from_conflicts('O', vector<pair_char_bool >{
-            pair_char_bool('N', true),
-            pair_char_bool('T', false),
-            pair_char_bool('H', false)});
-
-    get_char_from_conflicts('I', vector<pair_char_bool >{
-            pair_char_bool('N', true),
-            pair_char_bool('T', false),
-            pair_char_bool('T', true),
-            pair_char_bool('H', false),
-            pair_char_bool('A', false)});
-
-    get_char_from_conflicts('L', vector<pair_char_bool >{
-            pair_char_bool('E', true),
-            pair_char_bool('E', false),
-            pair_char_bool('A', false),
-            pair_char_bool('I', true)});
-
-    get_char_from_conflicts('C', vector<pair_char_bool >{
-            pair_char_bool('E', false),
-            pair_char_bool('O', true),
-            pair_char_bool('A', false),
-            pair_char_bool('A', true),
-            pair_char_bool('N', false),
-            pair_char_bool('I', false),
-            pair_char_bool('H', true)});
+        get_char_from_conflicts('R', vector<pair_char_bool >{
+                pair_char_bool('E', false),
+                pair_char_bool('E', true),
+                pair_char_bool('A', false)});
 
 
-    get_char_from_conflicts('D', vector<pair_char_bool >{
-            pair_char_bool('N', false),
-            pair_char_bool('E', false),
-            pair_char_bool('E', true),
-            pair_char_bool('I', true)});
+        get_char_from_conflicts('S', vector<pair_char_bool >{
+                pair_char_bool('E', false),
+                pair_char_bool('E', true),
+                pair_char_bool('T', true),
+                pair_char_bool('I', false),
+                pair_char_bool('A', false)});
 
-    get_char_from_conflicts('G', vector<pair_char_bool >{
-            pair_char_bool('N', false),
-            pair_char_bool('E', true)});
+        get_char_from_conflicts('N', vector<pair_char_bool >{
+                pair_char_bool('A', false),
+                pair_char_bool('T', true),
+                pair_char_bool('E', true)});
 
-    get_char_from_conflicts('F', vector<pair_char_bool >{
-            pair_char_bool('O', true),
-            pair_char_bool('T', true),
-            pair_char_bool('O', false)});
+        get_char_from_conflicts('O', vector<pair_char_bool >{
+                pair_char_bool('N', true),
+                pair_char_bool('T', false),
+                pair_char_bool('H', false)});
 
-    get_char_from_conflicts('W', vector<pair_char_bool >{
-            pair_char_bool('A', true),
-            pair_char_bool('E', false),
-            pair_char_bool('E', true),
-            pair_char_bool('H', true),
-            pair_char_bool('O', false),
-            pair_char_bool('I', true)});
+        get_char_from_conflicts('I', vector<pair_char_bool >{
+                pair_char_bool('N', true),
+                pair_char_bool('T', false),
+                pair_char_bool('T', true),
+                pair_char_bool('H', false),
+                pair_char_bool('A', false)});
+
+        get_char_from_conflicts('L', vector<pair_char_bool >{
+                pair_char_bool('E', true),
+                pair_char_bool('E', false),
+                pair_char_bool('A', false),
+                pair_char_bool('I', true)});
+
+        get_char_from_conflicts('C', vector<pair_char_bool >{
+                pair_char_bool('E', false),
+                pair_char_bool('O', true),
+                pair_char_bool('A', false),
+                pair_char_bool('A', true),
+                pair_char_bool('N', false),
+                pair_char_bool('I', false),
+                pair_char_bool('H', true)});
 
 
-    get_char_from_conflicts('U', vector<pair_char_bool >{
-            pair_char_bool('O', false),
-            pair_char_bool('R', true),
-            pair_char_bool('S', true),
-            pair_char_bool('T', true),});
+        get_char_from_conflicts('D', vector<pair_char_bool >{
+                pair_char_bool('N', false),
+                pair_char_bool('E', false),
+                pair_char_bool('E', true),
+                pair_char_bool('I', true)});
 
-    get_char_from_conflicts('M', vector<pair_char_bool >{
-            pair_char_bool('E', true),
-            pair_char_bool('E', false),
-            pair_char_bool('A', true),
-            pair_char_bool('O', false),
-            pair_char_bool('O', true),});
+        get_char_from_conflicts('G', vector<pair_char_bool >{
+                pair_char_bool('N', false),
+                pair_char_bool('E', true)});
 
-    get_char_from_conflicts('B', vector<pair_char_bool >{
-            pair_char_bool('E', true)});
+        get_char_from_conflicts('F', vector<pair_char_bool >{
+                pair_char_bool('O', true),
+                pair_char_bool('T', true),
+                pair_char_bool('O', false)});
 
-    get_char_from_conflicts('P', vector<pair_char_bool >{
-            pair_char_bool('E', true),
-            pair_char_bool('E', false)});
+        get_char_from_conflicts('W', vector<pair_char_bool >{
+                pair_char_bool('A', true),
+                pair_char_bool('E', false),
+                pair_char_bool('E', true),
+                pair_char_bool('H', true),
+                pair_char_bool('O', false),
+                pair_char_bool('I', true)});
 
-    for (int i = 0; i < 26; ++i) {
-        if (key[i] == '-') {
-            int j = 0;
-            while (choosed[j] == 1) {
-                j++;
+
+        get_char_from_conflicts('U', vector<pair_char_bool >{
+                pair_char_bool('O', false),
+                pair_char_bool('R', true),
+                pair_char_bool('S', true),
+                pair_char_bool('T', true),});
+
+        get_char_from_conflicts('M', vector<pair_char_bool >{
+                pair_char_bool('E', true),
+                pair_char_bool('E', false),
+                pair_char_bool('A', true),
+                pair_char_bool('O', false),
+                pair_char_bool('O', true),});
+
+        get_char_from_conflicts('B', vector<pair_char_bool >{
+                pair_char_bool('E', true)});
+
+        get_char_from_conflicts('P', vector<pair_char_bool >{
+                pair_char_bool('E', true),
+                pair_char_bool('E', false)});
+
+        for (int i = 0; i < 26; ++i) {
+            if (key[i] == '-') {
+                int j = 0;
+                while (choosed[j] == 1) {
+                    j++;
+                }
+                key[i] = j + 'A';
+                choosed[j] = 1;
             }
-            key[i] = j + 'A';
-            choosed[j] = 1;
         }
+        start = false;
     }
     return key;
 }
@@ -193,7 +196,7 @@ char Attack::get_char_from_conflicts(char ch, vector<pair_char_bool > twins) {
 }
 
 string Attack::decrypt() {
-    string key_ = get_key(), result, inverse_key = "--------------------------";
+    string key_ = generate_key(), result, inverse_key = "--------------------------";
     for (int i = 0; i < 26; i++) {
         inverse_key[key_[i] - 'A'] = i + 'A';
     }
@@ -201,4 +204,12 @@ string Attack::decrypt() {
         result += inverse_key[i - 'A'];
     }
     return result;
+}
+
+void Attack::swap_2_chars_in_key(char first, char second) {
+    if (first >= 'a' && first <= 'z') { first += 'a' - 'A'; }
+    if (second >= 'a' && second <= 'z') { second += 'a' - 'A'; }
+    char temp = key[first - 'A'];
+    key[first - 'A'] = key[second - 'A'];
+    key[second - 'A'] = temp;
 }
