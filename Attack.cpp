@@ -3,6 +3,7 @@
 #include "Attack.h"
 #include "iostream"
 
+#define pair_char_bool pair<char, bool> //instead of write it every time
 using namespace std;
 
 Attack::Attack(string ciphe) {
@@ -46,20 +47,72 @@ string Attack::get_key() {
     choosed['E' - 'A'] = 1;
     key[0] = one_chars[1].second;
     choosed[0] = 1;
-    // get_char_from_tows('H', 'E', true);
-    get_char_from_conflicts('H', vector<pair<char, bool>>{pair<char, bool>('E', true)});
+    get_char_from_conflicts('H', vector<pair_char_bool >{
+            pair_char_bool('E', true)});
 
-   // get_char_from_tows('T', 'H', true);
-    get_char_from_conflicts('T', vector<pair<char, bool>>{pair<char, bool>('H', true),
-                                                          pair<char, bool>('A', false)});
+    get_char_from_conflicts('T', vector<pair_char_bool >{
+            pair_char_bool('H', true),
+            pair_char_bool('A', false)});
+    get_char_from_conflicts('R', vector<pair_char_bool >{
+            pair_char_bool('E', false),
+            pair_char_bool('E', true),
+            pair_char_bool('A', false)});
+    get_char_from_conflicts('N', vector<pair_char_bool >{
+            pair_char_bool('A', false),
+            pair_char_bool('T', true),
+            pair_char_bool('E', true)});
+    get_char_from_conflicts('O', vector<pair_char_bool >{
+            pair_char_bool('N', true),
+            pair_char_bool('T', false),
+            pair_char_bool('H', false)});
 
-    get_char_from_tows('N', 'A', false);
+    get_char_from_conflicts('I', vector<pair_char_bool >{
+            pair_char_bool('N', true),
+            pair_char_bool('T', false),
+            pair_char_bool('T', true),
+            pair_char_bool('H', false),
+            pair_char_bool('A', false)});
 
-    get_char_from_tows('R', 'E', false);
-    get_char_from_tows('S', 'E', false);
-    get_char_from_tows('I', 'N', true);
-    get_char_from_tows('O', 'N', true);
+    get_char_from_conflicts('S', vector<pair_char_bool >{
+            pair_char_bool('E', false),
+            pair_char_bool('E', true),
+            pair_char_bool('T', true),
+            pair_char_bool('I', false),
+            pair_char_bool('A', false)});
+    get_char_from_conflicts('L', vector<pair_char_bool >{
+            pair_char_bool('E', true),
+            pair_char_bool('E', false),
+            pair_char_bool('A', false),
+            pair_char_bool('I', true)});
 
+    get_char_from_conflicts('C', vector<pair_char_bool >{
+            pair_char_bool('E', false),
+            pair_char_bool('O', true),
+            pair_char_bool('A', false),
+            pair_char_bool('A', true),
+            pair_char_bool('N', false),
+            pair_char_bool('I', false),
+            pair_char_bool('H', true)});
+
+    get_char_from_conflicts('U', vector<pair_char_bool >{
+            pair_char_bool('O', false),
+            pair_char_bool('R', true),
+            pair_char_bool('S', true),
+            pair_char_bool('T', true),});
+
+    get_char_from_conflicts('D', vector<pair_char_bool >{
+            pair_char_bool('N', false),
+            pair_char_bool('E', false),
+            pair_char_bool('E', true),
+            pair_char_bool('I', true)});
+
+    get_char_from_conflicts('W', vector<pair_char_bool >{
+            pair_char_bool('N', false),
+            pair_char_bool('E', false)});
+
+    get_char_from_conflicts('P', vector<pair_char_bool >{
+            pair_char_bool('E', true),
+            pair_char_bool('E', false)});
 
     return key;
 }
@@ -80,26 +133,25 @@ char Attack::get_char_from_tows(char target, char twin, bool first) {
     }
 }
 
-char Attack::get_char_from_conflicts(char ch, vector<pair<char, bool>> twins) {
+char Attack::get_char_from_conflicts(char ch, vector<pair_char_bool > twins) {
     auto result = new pair<int, char>[26];
     for (int i = 0; i < 26; i++) {
         result[i].first = 0;
         result[i].second = 'A' + i;
     }
-    for (pair<char, bool> twin: twins) {
+    for (pair_char_bool twin: twins) {
         result[get_char_from_tows(ch, twin.first, twin.second) - 'A'].first++;
     }
     sort(result, result + 26, [](const auto &x, const auto &y) { return x.first > y.first; });
     choosed[result[0].second - 'A'] = 1;
     key[ch - 'A'] = result[0].second;
-
     return result[0].second;
 }
 
 string Attack::decrypt() {
-    string key = get_key(), result, inverse_key = "--------------------------";
+    string key_ = get_key(), result, inverse_key = "--------------------------";
     for (int i = 0; i < 26; i++) {
-        inverse_key[key[i] - 'A'] = i + 'A';
+        inverse_key[key_[i] - 'A'] = i + 'A';
     }
     for (char i: cipher) {
         result += inverse_key[i - 'A'];
