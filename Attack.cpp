@@ -10,9 +10,6 @@ Attack::Attack(string ciphe) {
     cipher = ciphe;
     one_chars = count_1_char();
     tow_chars = count_2_chars();
-    for (int i = 0; i < 26; i++) {
-        unciphered[i] = false;
-    }
 }
 
 pair<int, char> *Attack::count_1_char() {
@@ -148,7 +145,14 @@ string Attack::get_key() {
             pair_char_bool('E', false)});
 
     for (int i = 0; i < 26; ++i) {
-
+        if (key[i] == '-') {
+            int j = 0;
+            while (choosed[j] == 1) {
+                j++;
+            }
+            key[i] = j + 'A';
+            choosed[j] = 1;
+        }
     }
     return key;
 }
@@ -180,6 +184,7 @@ char Attack::get_char_from_conflicts(char ch, vector<pair_char_bool > twins) {
     }
     sort(result, result + 26, [](const auto &x, const auto &y) { return x.first > y.first; });
     choosed[result[0].second - 'A'] = 1;
+
     key[ch - 'A'] = result[0].second;
     return result[0].second;
 }
