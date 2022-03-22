@@ -1,7 +1,5 @@
-
 #include "bits/stdc++.h"
 #include "Attack.h"
-#include "iostream"
 
 #define pair_char_bool pair<char, bool> //instead of write it every time
 using namespace std;
@@ -10,8 +8,8 @@ Attack::Attack(string ciphe) {
     cipher = ciphe;
     one_chars = count_1_char();
     tow_chars = count_2_chars();
-    for (int i = 0; i < 26; ++i) {
-        choosed[i] = 0;
+    for (char &i: choosed) {
+        i = 0;
     }
 }
 
@@ -163,7 +161,7 @@ string Attack::generate_key() {
     return key;
 }
 
-char Attack::get_char_from_tows(char target, char twin, bool first) {
+char Attack::get_char_from_tows(char twin, bool first) {
     for (int i = 0; i < cipher.length() - 1; ++i) {
         if (tow_chars[i].second[first ? 1 : 0] == key[twin - 'A']) {
             {
@@ -186,13 +184,21 @@ char Attack::get_char_from_conflicts(char ch, vector<pair_char_bool > twins) {
         result[i].second = 'A' + i;
     }
     for (pair_char_bool twin: twins) {
-        result[get_char_from_tows(ch, twin.first, twin.second) - 'A'].first++;
+        result[get_char_from_tows(twin.first, twin.second) - 'A'].first++;
     }
     sort(result, result + 26, [](const auto &x, const auto &y) { return x.first > y.first; });
     choosed[result[0].second - 'A'] = 1;
 
     key[ch - 'A'] = result[0].second;
     return result[0].second;
+}
+
+void Attack::swap_2_chars_in_key(char first, char second) {
+    if (first >= 'a' && first <= 'z') { first += 'a' - 'A'; }
+    if (second >= 'a' && second <= 'z') { second += 'a' - 'A'; }
+    char temp = key[first - 'A'];
+    key[first - 'A'] = key[second - 'A'];
+    key[second - 'A'] = temp;
 }
 
 string Attack::decrypt() {
@@ -204,12 +210,4 @@ string Attack::decrypt() {
         result += inverse_key[i - 'A'];
     }
     return result;
-}
-
-void Attack::swap_2_chars_in_key(char first, char second) {
-    if (first >= 'a' && first <= 'z') { first += 'a' - 'A'; }
-    if (second >= 'a' && second <= 'z') { second += 'a' - 'A'; }
-    char temp = key[first - 'A'];
-    key[first - 'A'] = key[second - 'A'];
-    key[second - 'A'] = temp;
 }

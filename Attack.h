@@ -1,4 +1,4 @@
-#include "iostream"
+#include "bits/stdc++.h"
 
 using namespace std;
 #ifndef KEYS_H_ATTACK_H
@@ -11,7 +11,7 @@ private:
     pair<int, char> *one_chars;
     pair<int, char *> *tow_chars;
     string cipher;
-    char choosed[26];
+    char choosed[26]{};
     string key = "--------------------------";
 
 public:
@@ -29,7 +29,7 @@ public:
 
     string decrypt();
 
-    char get_char_from_tows(char target, char twin, bool first);
+    char get_char_from_tows(char twin, bool first);
 
     char get_char_from_conflicts(char ch, vector<pair<char, bool> > twins);
 };

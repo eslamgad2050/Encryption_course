@@ -1,3 +1,3 @@
-/home/eslam/Downloads/Faculty/crypto/first_alogrithm 2.0/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/eslam/Downloads/Faculty/crypto/first_alogrithm 2.0/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/eslam/Downloads/Faculty/crypto/first_alogrithm 2.0/cmake-build-debug/CMakeFiles/first_alogrithm.dir
+/home/eslam/Downloads/Faculty/crypto/first_alogrithm /cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/eslam/Downloads/Faculty/crypto/first_alogrithm /cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/eslam/Downloads/Faculty/crypto/first_alogrithm /cmake-build-debug/CMakeFiles/first_alogrithm.dir
