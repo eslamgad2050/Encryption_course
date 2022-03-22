@@ -1,9 +1,0 @@
-# ninja log v5
-3	4738	1647968979362052829	CMakeFiles/first_alogrithm.dir/main.cpp.o	bbce94acda7246b5
-0	28	1647970391458474165	build.ninja	15ac7cd47af7a628
-4	4893	1647968979518053947	CMakeFiles/first_alogrithm.dir/Attack.cpp.o	8efb560e64a886aa
-4894	5025	1647968979650054894	first_alogrithm	e85ad10e120dc2b2
-0	3	0	clean	ddf536fcf9392b5c
-2	2321	1647970399722528238	CMakeFiles/first_alogrithm.dir/main.cpp.o	3676b1189c2e8bb5
-3	2751	1647970400150531040	CMakeFiles/first_alogrithm.dir/Attack.cpp.o	1a9107ac2ff024cd
-2751	2852	1647970400254531721	first_alogrithm	705c46ba09e873e9
