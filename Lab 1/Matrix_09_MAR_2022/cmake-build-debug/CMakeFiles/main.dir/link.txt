@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/mat_test.cpp.o CMakeFiles/main.dir/matrix.cpp.o -o main 
