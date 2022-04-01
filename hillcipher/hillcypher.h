@@ -37,7 +37,7 @@ public:
     // 1 by Eslam
     //return the modulus of operand1 whither it is positive or negative
     //if isDevisor is true ... (1/9)mod 26 = 3 // where oprand1 = 9
-    int mod(int operand1, float isDevisor = false, int oprand2 = 26);
+    int mod(int operand1, bool isDevisor = false, int operand2 = 26);
 
     // 2
     //this will randomly generate a key

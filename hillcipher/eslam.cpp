@@ -2,7 +2,6 @@
 // Created by eslam on 4/1/22.
 //
 
-#include "iostream"
 #include "hillcypher.h"
 
 using namespace std;
@@ -16,15 +15,15 @@ Hill::Hill(int k[3][3]) {
             key[i][j] = k[i][j]; //i is the row index, j is the column index
         }
     }
-//    getKeyInverse();//to generate the inverse key
+    getKeyInverse();//to generate the inverse key
 }
 
 //constructor generate random key
 //then call getKeyInverse
 //by Eslam
 Hill::Hill() {
-//    generateKey();//function generates key
-//    getKeyInverse();//to generate the inverse key
+    generateKey();//function generates key
+    getKeyInverse();//to generate the inverse key
 }
 
 /*function set the key  */
@@ -49,10 +48,32 @@ int Hill::determinant(int data[3][3]) {//pass matrix of 3*3
 }
 
 bool Hill::checkKey() {
-    int det = determinant(key);
-    if (det == 0 || det % 2 == 0 || det % 13 == 0) {
-        return false;
+    /*the key must have inverse and the elements of the key must be relatively prime with 26*/
+    int det = determinant(key);//check if the determinant of the key =0
+    if (det == 0) {
+        return false;//no inverse for the key cause the determinant is 0
     } else {
+        for (auto &i: key) { //got through the rows  i=row
+            for (int j: i) {//go through the columns  j=element int the row i
+                if (j % 2 == 0 || j % 13 == 0) { //check if the element is relatively prime with 26
+                    return false;
+                }
+            }
+        }
         return true;
+    }
+}
+
+int Hill::mod(int operand1, bool isDivisor, int operand2) {
+    if (isDivisor) {
+        int result = 0;
+        for (int i = 0; i < 26; ++i) {
+            if ((operand1 * i) % operand2 == 1) {
+                return i;
+            }
+        }
+        return result;
+    } else {
+        return operand1 > 0 ? operand1 % operand2 : (operand1 % operand2) + operand2;
     }
 }

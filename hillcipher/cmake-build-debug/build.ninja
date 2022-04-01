@@ -78,12 +78,6 @@ build CMakeFiles/main.dir/main.cpp.o: CXX_COMPILER__main_Debug /home/eslam/Downl
   OBJECT_DIR = CMakeFiles/main.dir
   OBJECT_FILE_DIR = CMakeFiles/main.dir
 
-build CMakeFiles/main.dir/matrix.cpp.o: CXX_COMPILER__main_Debug /home/eslam/Downloads/Faculty/crypto/alogrithms/hillcipher/matrix.cpp || cmake_object_order_depends_target_main
-  DEP_FILE = CMakeFiles/main.dir/matrix.cpp.o.d
-  FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles/main.dir
-  OBJECT_FILE_DIR = CMakeFiles/main.dir
-
 build CMakeFiles/main.dir/eslam.cpp.o: CXX_COMPILER__main_Debug /home/eslam/Downloads/Faculty/crypto/alogrithms/hillcipher/eslam.cpp || cmake_object_order_depends_target_main
   DEP_FILE = CMakeFiles/main.dir/eslam.cpp.o.d
   FLAGS = -g -std=gnu++14
@@ -98,7 +92,7 @@ build CMakeFiles/main.dir/eslam.cpp.o: CXX_COMPILER__main_Debug /home/eslam/Down
 #############################################
 # Link the executable main
 
-build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/matrix.cpp.o CMakeFiles/main.dir/eslam.cpp.o
+build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/eslam.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/main.dir
   POST_BUILD = :

@@ -3,4 +3,4 @@ project(hillcipher)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(main main.cpp matrix.cpp eslam.cpp)
+add_executable(main main.cpp eslam.cpp)
