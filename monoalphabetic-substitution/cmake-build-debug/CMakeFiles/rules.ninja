@@ -42,7 +42,7 @@ rule CXX_EXECUTABLE_LINKER__first_alogrithm_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /snap/clion/184/bin/cmake/linux/bin/cmake --regenerate-during-build -S"/home/eslam/Downloads/Faculty/crypto/first alogrithm /monoalphabetic-substitution" -B"/home/eslam/Downloads/Faculty/crypto/first alogrithm /monoalphabetic-substitution/cmake-build-debug"
+  command = /snap/clion/184/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/eslam/Downloads/Faculty/crypto/alogrithms/monoalphabetic-substitution -B/home/eslam/Downloads/Faculty/crypto/alogrithms/monoalphabetic-substitution/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 

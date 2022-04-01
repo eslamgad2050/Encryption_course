@@ -718,8 +718,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/eslam/Downloads/Faculty/crypto/first alogrithm /monoalphabetic-substitution/cmake-build-debug",
-		"source" : "/home/eslam/Downloads/Faculty/crypto/first alogrithm /monoalphabetic-substitution"
+		"build" : "/home/eslam/Downloads/Faculty/crypto/alogrithms/monoalphabetic-substitution/cmake-build-debug",
+		"source" : "/home/eslam/Downloads/Faculty/crypto/alogrithms/monoalphabetic-substitution"
 	},
 	"version" : 
 	{

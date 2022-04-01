@@ -96,7 +96,14 @@ void interact() {
     cout << "enter\n e: to encrypt\n d: to decrypt\n a: to attack\n 0: to exit\n";
     cin >> input;
     if (input == 'e') {
+        cout << "enter\n r:to randomly generate key\n k:to enter key manually\n";
+        char in;
+        cin >> in;
         char *key = keygen();
+        if (in == 'k') {
+            cout << "enter the key 26 chars in capital form\n";
+            cin >> key;
+        }
         cout << "key=   " << key << "\n";
         string x = encrpt(key, get_text_from_file("encryption.txt"));
         cout << x;
