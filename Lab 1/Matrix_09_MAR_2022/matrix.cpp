@@ -148,7 +148,9 @@ Matrix Matrix::operator*(const Matrix &m) const {
 }
 
 Matrix Matrix::operator/(const Matrix &m) const {
+    float det = m.determinant();
     Matrix *cofactors = new Matrix(rows, cols, 0);
+    if (det == 0 || !m.isSquare() || !this->isSquare()) { return *cofactors; }
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
             Matrix minor(rows - 1, cols - 1, 0);
@@ -162,7 +164,7 @@ Matrix Matrix::operator/(const Matrix &m) const {
             cofactors->data[i][j] = minor.determinant() * ((i + j) % 2 == 0 ? 1 : -1);
         }
     }
-    Matrix adjoint = cofactors->transpose(), result = (adjoint / m.determinant());
+    Matrix adjoint = cofactors->transpose(), result = (adjoint / det);
     result.print();
     return *this * result;
 }

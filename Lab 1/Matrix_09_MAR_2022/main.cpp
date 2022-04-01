@@ -3,19 +3,19 @@
 #include "mat_test.h"
 
 
-int main() {/*
+int main() {
     Matrix matrix(4, 4, 0);
     matrix.access(0, 0) = 4;
-    matrix.access(1, 2) = 2;
-    matrix.access(2, 1) = 1;
+    matrix.access(1, 2) = 5;
+    matrix.access(2, 1) = 3;
     matrix.access(2, 2) = 2;
-    matrix.access(3, 0) = 1;
+    matrix.access(3, 0) = 11;
     matrix.access(3, 3) = 1;
     matrix.access(2, 0) = 0;
     Matrix matrix1(3, 3);
     (matrix / matrix).print();
 
-    return 0;*/
+    return 0;
     Mat_Test mt;
     int test_num = -1;
     // start message
