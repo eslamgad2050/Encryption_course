@@ -64,16 +64,20 @@ bool Hill::checkKey() {
     }
 }
 
-int Hill::mod(int operand1, bool isDivisor, int operand2) {
-    if (isDivisor) {
+//function to return the modulus we can't use % due to negative numbers(-7%26=-7)
+//find multiplicative inverses (operand1^-1 mod operand2) when inverse is true
+int Hill::mod(int operand1, bool inverse, int operand2) {
+    if (inverse) {//if we need multiplicative inverses
         int result = 0;
-        for (int i = 0; i < 26; ++i) {
-            if ((operand1 * i) % operand2 == 1) {
+        for (int i = 1; i < 26; ++i) {//iterate over all possibles 1:25
+            if ((operand1 * i) % operand2 == 1) {//if mod*i==1 then it is the multiplicative inverses
                 return i;
             }
         }
         return result;
     } else {
+        //if the operand1 in positive just use %
+        //else it is negative use % then add one operand to get the smallest positive result
         return operand1 > 0 ? operand1 % operand2 : (operand1 % operand2) + operand2;
     }
 }
