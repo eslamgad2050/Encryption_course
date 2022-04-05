@@ -1,4 +1,0 @@
-/snap/clion/184/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/184/bin/ninja/linux/ninja -G Ninja /home/eslam/Downloads/Faculty/crypto/alogrithms/hillcipher
--- Configuring done
--- Generating done
--- Build files have been written to: /home/eslam/Downloads/Faculty/crypto/alogrithms/hillcipher/cmake-build-debug
