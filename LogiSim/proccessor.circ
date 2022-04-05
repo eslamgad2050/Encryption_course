@@ -645,4 +645,40 @@
     <wire from="(300,320)" to="(350,320)"/>
     <wire from="(300,420)" to="(350,420)"/>
   </circuit>
+  <circuit name="DECODER1_2">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="DECODER1_2"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(310,180)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+    </comp>
+    <comp lib="0" loc="(330,140)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+    </comp>
+    <comp lib="0" loc="(500,160)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="0" loc="(500,250)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </comp>
+    <comp lib="1" loc="(400,140)" name="NOT Gate"/>
+    <comp lib="1" loc="(480,160)" name="AND Gate"/>
+    <comp lib="1" loc="(480,250)" name="AND Gate"/>
+    <wire from="(310,180)" to="(330,180)"/>
+    <wire from="(330,140)" to="(340,140)"/>
+    <wire from="(330,180)" to="(330,270)"/>
+    <wire from="(330,180)" to="(430,180)"/>
+    <wire from="(330,270)" to="(430,270)"/>
+    <wire from="(340,140)" to="(340,230)"/>
+    <wire from="(340,140)" to="(370,140)"/>
+    <wire from="(340,230)" to="(430,230)"/>
+    <wire from="(400,140)" to="(430,140)"/>
+    <wire from="(480,160)" to="(500,160)"/>
+    <wire from="(480,250)" to="(500,250)"/>
+  </circuit>
 </project>
