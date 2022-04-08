@@ -10,18 +10,21 @@ private:
 public:
     //1 (key and main)
     //constructor set the first 4words of the expanded and call expand
-    Key(unsigned char [4][4]);
+    Key(unsigned char key[4][4]);
 
+    //2
     unsigned char **sub_word(unsigned char temp[4][4]);
 
+    //2
     unsigned char **rotate_word(unsigned char temp[4][4]);
 
     //3
-    //return word number n(0 means the original key)
-    unsigned char **get_key(int n);
+    unsigned char **get_expanded_key();
 
+    //3
     //expands the key
     void expand();
 };
+
 
 #endif //KEY_EXPANSION_KEY_H
