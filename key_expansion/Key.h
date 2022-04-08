@@ -13,10 +13,10 @@ public:
     Key(unsigned char key[4][4]);
 
     //2
-    unsigned char **sub_word(unsigned char temp[4][4]);
+    unsigned char *sub_word(unsigned char temp[4]);
 
     //2
-    unsigned char **rotate_word(unsigned char temp[4][4]);
+    unsigned char *rotate_word(unsigned char temp[4]);
 
     //3
     unsigned char **get_expanded_key();
