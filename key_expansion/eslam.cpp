@@ -2,6 +2,10 @@
 // Created by eslam on 4/8/22.
 //
 #include "Key.h"
+#include "iostream"
+#include "iomanip"
+//define HEX(x) to use with cout to print the unsigned char as hex
+#define HEX(x) setw(2) << setfill('0') << hex << (int)( x ) //
 
 using namespace std;
 
@@ -27,8 +31,9 @@ void interact() {
     cout << "here is the expanded key\n";
     expanded_key = key.get_expanded_key();//get the expanded key from the class key
     for (int i = 0; i < 44; ++i) {//iterate on each word of the expanded key
+
         for (int j = 0; j < 4; ++j) {//iterate on each byte of the word
-            cout << expanded_key[i][j] << " ";//print the value of the byte
+            cout << HEX(expanded_key[i][j]) << " ";//print the value of the byte in the hex form
         }
         cout << "\n";//new line for each word
     }
@@ -47,5 +52,6 @@ void interact() {
             cout << "\n";//new line for each word
         }
     }
+
 }
 

@@ -3,4 +3,4 @@ project(key_expansion)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(key_expansion main.cpp Key.h)
+add_executable(key_expansion main.cpp Key.h aziz.cpp rady.cpp eslam.cpp)

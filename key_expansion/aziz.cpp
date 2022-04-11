@@ -1,16 +1,10 @@
 //print word in hex form
 //for debugging and checking
-/*
-void print(unsigned char *word) {
-    for (int i = 0; i < 4; i++)
-        cout << hex << int(word[i]) << ' ';
-
-    cout << endl;
-}
-*/
 
 #include "Key.h"
+#include "iostream"
 
+using namespace std;
 //this S_BOX is copied from the text book
 unsigned const char S_BOX[16][16] =
         {
@@ -60,3 +54,12 @@ unsigned char *Key::rotate_word(unsigned char temp[4]) {
         rot[i] = temp[(i + 3) % 4];
     return rot;
 }
+
+
+void print(unsigned char *word) {
+    for (int i = 0; i < 4; i++)
+        cout << hex << int(word[i]) << ' ';
+
+    cout << endl;
+}
+

@@ -1,9 +1,22 @@
 #include <iostream>
 #include "Key.h"
-#include "eslam.cpp"
+
 using namespace std;
 
-int main() {
+void interact();
+
+void print(unsigned char *word);
+
+int main() {/*
+    char x;
+    cin >> x;
+    unsigned char y;
+    cin >> y;
+    cout << "x= " << x << "\ny= " << y;
+    x = y ^ x;
+    //  cout << "\nx^y= " << x;
+    cout << hex << int(x) << ' ';
+    return 0;*/
     /*std::cout << "enter seed" << std::endl;
     int seed = 0;
     cin >> seed;
