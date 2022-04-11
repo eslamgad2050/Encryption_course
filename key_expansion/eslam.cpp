@@ -16,7 +16,7 @@ Key::Key(unsigned char key[4][4]) {
             expanded_key[i][j] = key[i][j];  //word i and byte j
         }
     }
-//    expand();//start the expand function
+ expand();//start the expand function
 }
 
 void interact() {
