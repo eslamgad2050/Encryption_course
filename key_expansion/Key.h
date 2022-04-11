@@ -4,9 +4,10 @@
 #ifndef KEY_EXPANSION_KEY_H
 #define KEY_EXPANSION_KEY_H
 
+
 class Key {
 private:
-    unsigned char expanded_key[11][4];
+    unsigned char expanded_key[44][4];
 public:
     //1 (key and main)
     //constructor set the first 4words of the expanded and call expand

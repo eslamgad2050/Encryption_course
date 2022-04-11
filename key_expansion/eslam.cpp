@@ -17,7 +17,7 @@ Key::Key(unsigned char key[4][4]) {
 
 void interact() {
     cout << "enter the main_key you want to expand\n";
-    unsigned char main_key[4][4], expanded_key[11][4];
+    unsigned char main_key[4][4], **expanded_key;
     for (int i = 0; i < 4; i++) {//iterate on each word of the key
         for (int j = 0; j < 4; ++j) {//iterate on each byte of the word
             cin >> main_key[i][j];//enter the value of the byte
@@ -25,8 +25,8 @@ void interact() {
     }
     Key key(main_key);//object of clas key and set the value of the key
     cout << "here is the expanded key\n";
-    key.get_expanded_key();//get the expanded key from the class key
-    for (int i = 0; i < 11; ++i) {//iterate on each word of the expanded key
+    expanded_key = key.get_expanded_key();//get the expanded key from the class key
+    for (int i = 0; i < 44; ++i) {//iterate on each word of the expanded key
         for (int j = 0; j < 4; ++j) {//iterate on each byte of the word
             cout << expanded_key[i][j] << " ";//print the value of the byte
         }
