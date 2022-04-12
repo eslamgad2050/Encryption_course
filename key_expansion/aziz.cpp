@@ -51,7 +51,7 @@ unsigned char *Key::rotate_word(unsigned char temp[4]) {
     //we want   rot[0] = temp[3]
     //          rot[1] = temp[0] = temp[4%4]
     for (int i = 0; i < 4; i++)
-        rot[i] = temp[(i + 3) % 4];
+        rot[i] = temp[(i + 1) % 4];
     return rot;
 }
 

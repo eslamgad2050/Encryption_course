@@ -16,7 +16,7 @@ Key::Key(unsigned char key[4][4]) {
             expanded_key[i][j] = key[i][j];  //word i and byte j
         }
     }
- expand();//start the expand function
+    expand();//start the expand function
 }
 
 void interact() {
@@ -24,7 +24,9 @@ void interact() {
     unsigned char main_key[4][4], **expanded_key;
     for (int i = 0; i < 4; i++) {//iterate on each word of the key
         for (int j = 0; j < 4; ++j) {//iterate on each byte of the word
-            cin >> main_key[i][j];//enter the value of the byte
+            int temp;
+            cin >> hex >> temp;
+            main_key[i][j] = temp;//enter the value of the byte
         }
     }
     Key key(main_key);//object of clas key and set the value of the key
