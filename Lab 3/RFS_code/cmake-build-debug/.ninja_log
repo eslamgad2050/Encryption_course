@@ -1,0 +1,11 @@
+# ninja log v5
+27	1073	1649883849634247956	CMakeFiles/RFS_code.dir/School.cpp.o	aff4b1afb7da1de5
+13	116	1649883848674245015	CMakeFiles/RFS_code.dir/record.cpp.o	8bb111c58075ae33
+1	35	1649884280519814995	CMakeFiles/RFS_code.dir/src/School.cpp.o	f8c003d7544879c4
+14	1068	1649883849626247931	CMakeFiles/RFS_code.dir/RFS.cpp.o	1ab7d238081e2ad9
+1	642	1649884045234905683	CMakeFiles/RFS_code.dir/Student.cpp.o	bfeb9dd93282b0c4
+0	495	1649884336388044612	CMakeFiles/RFS_code.dir/main.cpp.o	b023ddbacac2eb86
+0	28	1649884422084404804	build.ninja	7ce9ee5e687b50f5
+0	575	1649884620897270206	CMakeFiles/RFS_code.dir/main.cpp.o	b023ddbacac2eb86
+2	394	1649884632541321953	CMakeFiles/RFS_code.dir/main.cpp.o	b023ddbacac2eb86
+394	474	1649884632617322291	RFS_code	7623d7b8f0a60bed

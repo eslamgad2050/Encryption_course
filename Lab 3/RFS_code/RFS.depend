@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1428488481 source:c:\users\dell\documents\rfs\main.cpp
+	<conio.h>
+	"RFS.h"
+	"Student.h"
+	"School.h"
+
+1428485491 source:c:\users\dell\documents\rfs\record.cpp
+	"Record.h"
+
+1428485491 c:\users\dell\documents\rfs\record.h
+
+1428485922 source:c:\users\dell\documents\rfs\rfs.cpp
+	"RFS.h"
+
+1428485491 c:\users\dell\documents\rfs\rfs.h
+	<iostream>
+	<fstream>
+	"Record.h"
+
+1428485998 source:c:\users\dell\documents\rfs\student.cpp
+	"Student.h"
+	"String.h"
+
+1428485922 c:\users\dell\documents\rfs\student.h
+	"RFS.h"
+
+1428486049 source:c:\users\dell\documents\rfs\src\school.cpp
+	"School.h"
+
+1428486049 c:\users\dell\documents\rfs\include\school.h
+
+1428492150 source:c:\users\dell\documents\rfs\school.cpp
+	"School.h"
+	"Student.h"
+	"RFS.h"
+	"string.h"
+
+1428488847 c:\users\dell\documents\rfs\school.h
+	"RFS.h"
+
