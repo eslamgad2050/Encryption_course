@@ -2287,7 +2287,7 @@
     </comp>
     <comp lib="0" loc="(380,810)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="ALU"/>
+      <a name="label" val="A_LU"/>
       <a name="width" val="3"/>
     </comp>
     <comp lib="0" loc="(400,740)" name="Ground">
@@ -2310,7 +2310,7 @@
       <a name="spacing" val="2"/>
     </comp>
     <comp lib="0" loc="(600,1170)" name="Tunnel">
-      <a name="label" val="ALU"/>
+      <a name="label" val="A_LU"/>
       <a name="width" val="3"/>
     </comp>
     <comp lib="0" loc="(640,200)" name="Tunnel">
