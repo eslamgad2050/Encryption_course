@@ -23,10 +23,12 @@ public:
     void show_key();//display the key on screen
 
     friend class RC4;
+
 };
 
 class RC4
 {
+
 private:
     char intiial_state_vector[256];//initial state vector
     char temp_vector[256];//temporary vector
@@ -39,11 +41,12 @@ public:
     //**1
     void first_permutation();//first permutation that change s2[] by equation j=((j+s[i]+t[i])mod 256} then swap (s[i],s[j])
     //***2
-    void secondPer_andCreateKey(int a)//first create key array with length a(text length) and save it to char* key then do second swap on s2[] and generate key
+    void secondPer_andCreateKey(int a);//first create key array with length a(text length) and save it to char* key then do second swap on s2[] and generate key
     //*2
     std::string En_De_cryption(std::string text);  //use the key to encrypt the text and return the encrypted text
 
 };
+
 
 
 #endif // STREAM_PROJECT_H_INCLUDED
